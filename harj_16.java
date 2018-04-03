@@ -16,7 +16,6 @@ Viimeinen: 8
 Summa on 35
 
 Ja nyt laskettiin 2 + 3 + 4 + 5 + 6 + 7 + 8 = 35
-
 */
 import java.util.Scanner;
 
