@@ -12,7 +12,6 @@ Mihin asti? 7
 Summa on 28
 
 Ja nyt laskettiin 1 + 2 + 3 + 4 + 5 + 6 + 7 = 28 
-
 */
 import java.util.Scanner;
 
