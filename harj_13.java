@@ -1,25 +1,72 @@
+/*
+Toteuta ohjelma, missä käyttäjän tulee arvata välillä 1-100 oleva luku. 
+Aseta pelin arvattavaksi luvuksi 42.
+Ohjelman suoritus loppuu kun käyttäjä arvaa oikean luvun (eli 42). 
+Jos käyttäjä syöttää luvun, joka on suurempi kuin 100 tai pienempi kuin 1, 
+käyttäjälle kerrotaan ettei hänen syöttämänsä luku ollut kelvollinen.
+Jos käyttäjä syöttää luvun, joka on pienempi kuin arvattava luku, 
+käyttäjälle kerrotaan että arvattava luku on suurempi. 
+Jos taas käyttäjä syöttää luvun, joka on suurempi kuin arvattava luku, 
+käyttäjälle kerrotaan että arvattava luku on pienempi.
 
+Ohjelman tulee kertoa käyttäjälle myös tehtyjen kelvollisten arvausten määrä.
+
+Minäpä tiedän luvun väliltä 1-100, jota sinä et tiedä!
+
+Arvaa luku: 5
+Lukuni on isompi!
+Arvaa luku: 25
+Lukuni on isompi!
+Arvaa luku: 450
+Epäkelpo luku!
+Arvaa luku: 50
+Lukuni on pienempi!
+Arvaa luku: 45
+Lukuni on pienempi!
+Arvaa luku: 40
+Lukuni on isompi!
+Arvaa luku: 42
+
+Oikein! Arvauksia yhteensä: 6
+
+Kun saat ohjelman valmiiksi, palauta se. Voit halutessasi tämän jälkeen 
+kokeilla pelin pelaamista myös satunnaisilla luvuilla. Välillä 1-100 olevan 
+satunnaisen luvun arpominen onnistuu seuraavasti:
+
+int luku = (int) (1 + Math.random() * 100);
+*/
 import java.util.Scanner;
 
-public class KolmenLuvunSummaaja {
+public class VihjaavaArvauspeli {
 
     public static void main(String[] args) {
         Scanner lukija = new Scanner(System.in);
-/*
-Tee ohjelma, joka kysyy käyttäjältä kolme kokonaislukua ja tulostaa niiden summan.
-Anna ensimmäinen luku: 5
-Anna toinen luku: 2
-Anna kolmas luku: 12
-Lukujen summa: 19
-*/
-        // Toteuta ohjelmasi tähän. Muista kysyä kolmea lukua käyttäjältä!
-        System.out.println("Anna ensimmäinen luku: ");
-        int eka = Integer.parseInt(lukija.nextLine());
-        System.out.println("Anna toinen luku: ");
-        int toka = Integer.parseInt(lukija.nextLine());
-        System.out.println("Anna kolmas luku: ");
-        int kolmas = Integer.parseInt(lukija.nextLine());
-        int tulos = eka+toka+kolmas;
-        System.out.println("Lukujen summa: "+tulos);
+        // kun olet palauttanut tehtävän ja saanut siitä pisteet,
+        // kokeile myös seuraavaa: 
+        // int arvattava = (int) (1 + Math.random() * 100);
+
+        int arvattava = 42;
+        int arvauksia = 0;
+        System.out.println("Minäpä tiedän luvun väliltä 1-100, jota sinä et tiedä!");
+        while (true){
+            System.out.println("Arvaa luku: ");
+            int arvaus = Integer.parseInt(lukija.nextLine());
+            if (arvaus<1 || arvaus>100){
+                System.out.println("Epäkelpo luku!");
+            }else{
+                if (arvaus<arvattava){
+                    System.out.println("Lukuni on isompi!");
+                    arvauksia++;
+                }else if (arvaus>arvattava){
+                    System.out.println("Lukuni on pienempi!");
+                    arvauksia++;
+                }else{
+                    arvauksia++;
+                    System.out.println("Oikein! Arvauksia yhteensä: "+arvauksia);
+                    break;
+                }
+                
+            }
+        }
     }
 }
