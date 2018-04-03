@@ -1,32 +1,46 @@
+/*
+Toteuta ohjelma, joka lukee käyttäjän antamia syötteitä ja laskee 
+kelvollisten lukujen lukumäärän. Luku on kelvollinen, jos se on suurempi 
+tai yhtäsuuri kuin -140 ja pienempi tai yhtäsuuri kuin 20. 
+Lopeta syötteiden lukeminen kun käyttäjä syöttää luvun 9999.
 
-public class Nelilaskin {
+Jos käyttäjä syöttää luvun, joka on pienempi kuin -140 tai suurempi 
+kuin 20, hänelle kerrotaan ettei syötetty luku ollut kelvollinen.
+
+Syötä luku: 5
+Syötä luku: 22
+Kelvoton luku
+Syötä luku: -11
+Syötä luku: -140
+Syötä luku: -18
+Syötä luku: 9999
+
+Kelvollisia lukuja yhteensä: 4
+*/
+import java.util.Scanner;
+
+public class KelvollistenLukujenLukumaara {
 
     public static void main(String[] args) {
-        int eka = 5;
-        int toka = 3;
+        Scanner lukija = new Scanner(System.in);
+        int maara = 0;
+        while (true){
+            System.out.println("Syötä luku: ");
+            int luku = Integer.parseInt(lukija.nextLine());
+            
+            if (luku>=-140 && luku<=20){
+                maara++;
+                continue;
+            }
+            if (luku==9999){
+                break;
+            }
+            if (luku<-140 || luku>20){
+                System.out.println("Kelvoton luku");
+            }
+        }
+        System.out.println("Kelvollisten lukuja yhteensa: "+maara);
 
-        System.out.println(eka + " + " + toka + " = " + (eka + toka));
-/*        
-Tehtäväpohjassa on ohjelma, jossa on kaksi muuttujaa. 
-Ohjelman tulostus on tällä hetkellä seuraava.
-5 + 3 = 8
-
-Muokkaa ohjelmaa siten, että ohjelma laskee myös 
-lukujen erotuksen, tulon, ja jakolaskun.
-5 + 3 = 8
-5 - 3 = 2
-5 * 3 = 15
-5 / 3 = 1.6666666666666667
-
-Huom! Jos muuttujien arvoja muutetaan, tulee myös tulostuksen muuttua.
-1 + 3 = 4
-1 - 3 = -2
-1 * 3 = 3
-1 / 3 = 0.3333333333333333
-*/
-        // Toteuta loput nelilaskimesta tähän.
-        System.out.println(eka + " - " + toka + " = " + (eka - toka));
-        System.out.println(eka + " * " + toka + " = " + (eka * toka));
-        System.out.println(eka + " / " + toka + " = " + (1.0 * eka / toka));
     }
 }
+
