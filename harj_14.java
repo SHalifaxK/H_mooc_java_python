@@ -27,7 +27,6 @@ Jos tavoite on suurempi kuin lähtökohta ei tulostu mitään:
 
 Mihin asti? 12
 Mistä lähtien? 16
-
 */
 import java.util.Scanner;
 
