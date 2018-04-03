@@ -1,90 +1,46 @@
+/*
+Toteuta ohjelma, joka lukee käyttäjän antamia syötteitä ja laskee 
+kelvollisten lukujen summan. Luku on kelvollinen, jos se on suurempi 
+tai yhtäsuuri kuin -140 ja pienempi tai yhtäsuuri kuin 20. 
+Lopeta syötteiden lukeminen kun käyttäjä syöttää luvun 9999.
 
-import javafx.application.Application;
-import javafx.beans.value.ObservableValue;
-import javafx.geometry.Insets;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.GridPane;
-import javafx.stage.Stage;
+Jos käyttäjä syöttää luvun, joka on pienempi kuin -140 tai suurempi 
+kuin 20, hänelle kerrotaan ettei syötetty luku ollut kelvollinen.
 
-public class Jakolaskin extends Application {
+Syötä luku: 5
+Syötä luku: 22
+Kelvoton luku
+Syötä luku: -11
+Syötä luku: -140
+Syötä luku: -18
+Syötä luku: 9999
 
-    @Override
-    public void start(Stage stage) {
+Kelvollisia lukuja yhteensä: 4
+*/
+import java.util.Scanner;
 
-        // luodaan ulkoasu ja määritellään käyttöliittymän komponenttien asettelu
-        GridPane root = new GridPane();
-        root.setVgap(10);
-        root.setHgap(5);
-        root.setPadding(new Insets(10));
-
-        // luodaan tekstikenttien tekstit
-        Label luku1Teksti = new Label(" Luku 1:");
-        Label luku2Teksti = new Label(" Luku 2:");
-        
-        // luodaan kentät, joihin käyttäjä voi syöttää tekstiä
-        TextField luku1Kentta = new TextField("0");
-        luku1Kentta.setId("luku1");
-        TextField luku2Kentta = new TextField("0");
-        luku2Kentta.setId("luku2");
-        
-        asetaVainLukujaHyvaksyvaksi(luku1Kentta);
-        asetaVainLukujaHyvaksyvaksi(luku2Kentta);
-        
-        // luodaan kenttä, johon laskutulos lopulta asetetaan
-        Label osamaaraTeksti = new Label("");
-        osamaaraTeksti.setId("osamaara");
-
-        // luodaan nappi, jota painamalla laskutoimitus tehdään
-        Button btn = new Button();
-        btn.setId("nappi");
-        btn.setText(" / ");
-        btn.setOnAction((e) -> {
-            // haetaan tekstikenttien sisältämät arvot ja muunnetaan ne luvuiksi
-
-            int luku1 = Integer.parseInt(luku1Kentta.getText());
-            int luku2 = Integer.parseInt(luku2Kentta.getText());
-            
-            if(luku2 == 0) {
-                return;
-            }
-
-            // tehdään jakolasku
-            double osamaara = 1.0 * luku1 / luku2;
-
-            // asetetaan teksti laskutuloksen näyttävään kenttään
-            osamaaraTeksti.setText(luku1 + " / " + luku2 + " = " + osamaara);
-        });
-
-        // lisätään luodut elementit käyttöliittymään
-        root.add(luku1Teksti, 0, 0);
-        root.add(luku1Kentta, 2, 0);
-        root.add(luku2Teksti, 0, 1);
-        root.add(luku2Kentta, 2, 1);
-
-        root.add(btn, 0, 2);
-        root.add(osamaaraTeksti, 2, 2);
-
-        // näytetään ohjelma
-        Scene scene = new Scene(root);
-
-        stage.setTitle("");
-        stage.setScene(scene);
-        stage.show();
-    }
+public class KelvollistenLukujenSumma {
 
     public static void main(String[] args) {
-        launch(args);
-    }
-
-    private void asetaVainLukujaHyvaksyvaksi(TextField kentta) {
-        kentta.textProperty().addListener((ObservableValue<? extends String> observable, String oldValue, String newValue) -> {
-            if (!newValue.matches("\\d*")) {
-                kentta.setText(new Integer(newValue.replaceAll("[^\\d]", "")).toString());
+        Scanner lukija = new Scanner(System.in);
+        int summa = 0;
+        while (true){
+            System.out.println("Syötä luku: ");
+            int luku = Integer.parseInt(lukija.nextLine());
+            
+            if (luku>=-140 && luku<=20){
+                summa = summa + luku;
+                continue;
             }
-        });
-    }
+            if (luku==9999){
+                break;
+            }
+            if (luku<-140 || luku>20){
+                System.out.println("Kelvoton luku");
+            }
+        }
+        System.out.println("Kelvollisten lukujen summa: "+summa);
 
+    }
 }
+
