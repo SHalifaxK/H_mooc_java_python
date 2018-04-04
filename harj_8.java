@@ -1,41 +1,38 @@
-
-public class KolmenLuvunKeskiarvo {
-
-    public static void main(String[] args) {
 /*
-        
+Tee ohjelma, joka kysyy käyttäjän nimen ja ilmoittaa, 
+kuinka monta kirjainta siinä on. Toteuta merkkijonon pituuden 
+selvittäminen erilliseen metodiin 
+public static int laskeKirjaimet(String merkkijono).
 
-Tehtäväpohjassa on ohjelma, jossa on kolme muuttujaa. Ohjelman tulostus on tällä hetkellä seuraava.
-eka: 9
-toka: 7
-kolmas: 6
+Anna nimi: Pekka
+Kirjainmäärä: 5
 
-Muokkaa ohjelmaa siten, että ohjelma tulostaa myös muuttujien keskiarvon.
-eka: 9
-toka: 7
-kolmas: 6
-keskiarvo: 7.333333333333333
+Anna nimi: Katariina
+Kirjainmäärä: 9
 
-Huom! Jos muuttujien arvoja muutetaan, tulee myös tulostuksen muuttua.
-eka: 5
-toka: 7
-kolmas: 4
-keskiarvo: 5.333333333333333
+Huom! Rakenna ohjelmasi niin että laitat pituuden laskemisen omaan metodiinsa: 
+public static int laskeKirjaimet(String merkkijono). 
+Testit testaavat sekä metodia laskeKirjaimet että koko ohjelman toimintaa.
+*/
+import java.util.Scanner;
 
-
-        */
-        int eka = 9;
-        int toka = 7;
-        int kolmas = 6;
-        
-        System.out.println("eka: " + eka);
-        System.out.println("toka: " + toka);
-        System.out.println("kolmas: " + kolmas);
-        
-        // Toteuta ohjelmasi tähän. Muista käyttää muuttujia eka, toka ja kolmas!
-        double keskiarvo = (eka+toka+kolmas)/3.0;
-        System.out.println("keskiarvo: "+keskiarvo);
+public class NimenPituus {
     
+    public static int laskeKirjaimet(String merkkijono){
+        int lukumaara = merkkijono.length();
+        return lukumaara;
     }
+    
+    public static void main(String[] args) {
+        Scanner lukija = new Scanner(System.in);
+        
+        System.out.println("Anna nimi: ");
+        String nimi = lukija.nextLine();
+        System.out.println(laskeKirjaimet(nimi));
+        // kutsu täältä metodiasi
+    }
+    
+    // tee tänne metodi 
+    // public static int laskeKirjaimet(String merkkijono)
+    
 }
-
