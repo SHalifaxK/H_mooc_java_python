@@ -1,28 +1,29 @@
-public class SekunnitVuodessa {
+/*
+Tee ohjelma joka lukee käyttäjältä merkkijonon ja tulostaa 
+merkkijonon kolmesti peräkkäin.
 
-    public static void main(String[] args) {
+Mikä tulostetaan? kukka
 
-        // Tässä on hieman puolitiehen jäänyt versio vuoden sekunnit
-        // laskevasta ohjelmasta. Korjaapa se!
-        /*
-        
+kukkakukkakukka
+*/
+import java.util.Scanner;
 
-Täydennä tehtäväpohjassa olevaa ohjelmaa siten, että se laskee kuinka monta sekuntia on vuodessa. 
-Voit olettaa, että vuodessa on 365 päivää.
+public class TulostusKolmesti {
 
-Ohjelman tulostus on seuraava:
-Vuodessa on X sekuntia.
-X:n kohdalle tulee ohjelmasi laskema tulos. Huom! Hyödynnä tässä tehtävässä muuttujia.
-
-        */
-        int paiviaVuodessa = 365;
-        int tuntejaPaivassa = 24;
-        int minuuttejaTunnissa = 60;
-        int sekuntejaMinuutissa = 60;
-        int sekuntejaVuodessa = paiviaVuodessa * tuntejaPaivassa * minuuttejaTunnissa * sekuntejaMinuutissa;
-
-        // Älä muuta alla olevaa tulostuslausetta (muokkaa vain yllä olevia muuttujia ja laskua)
-        System.out.println("Vuodessa on " + sekuntejaVuodessa + " sekuntia.");
+    public static String tulosta(String x){
+       
+       return x; 
     }
+    
+    public static void main(String[] args) {
+        Scanner lukija = new Scanner(System.in);
+        System.out.println("Mitä tulostetaan? ");
+        String tulostus = lukija.nextLine();
+        System.out.print(tulosta(tulostus));
+        System.out.print(tulosta(tulostus));
+        System.out.print(tulosta(tulostus));
+        // Toteuta ohjelmasi tähän.
 
+    }
 }
+
