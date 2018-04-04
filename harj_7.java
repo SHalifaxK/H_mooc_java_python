@@ -1,28 +1,41 @@
+/*
+Tee ohjelma, joka tunnistaa seuraavat käyttäjät:
+tunnus 	salasana
+aleksi 	tappara
+elina 	kissa
 
-public class Kertolasku {
+Ohjelma näyttää käyttäjälle henkilökohtaisen viestin tai ilmoittaa, 
+jos tunnus tai salasana on väärin.
+
+Anna tunnus: aleksi
+Anna salasana: tappara
+Olet kirjautunut järjestelmään
+
+Anna tunnus: elina
+Anna salasana: kissa
+Olet kirjautunut järjestelmään
+
+Anna tunnus: aleksi
+Anna salasana: jokerit
+Virheellinen tunnus tai salasana!
+*/
+import java.util.Scanner;
+
+public class Kayttajatunnukset {
 
     public static void main(String[] args) {
-
-        int a = 1337;
-        int b = 42;
-/*
+        Scanner lukija = new Scanner(System.in);
         
-
-Tee edellistä ohjelmaa vastaava ohjelma, joka laskee kahden kokonaislukumuuttujaan sijoitetun arvon kertolaskun.
-
-Esimerkiksi jos muuttujissa on luvut 2 ja 8, ohjelman tulostus on seuraava:
-2 * 8 = 16
-
-Jos taas muuttujissa on luvut 277 ja 111, ohjelman tulostus on seuraava:
-277 * 111 = 30747
-        
-Kokeile myös kuinka suuren kertolaskun ohjelmasi pystyy laskemaan!
-
-        */
-        // Toteuta ohjelmasi tähän -- ota tarvittaessa mallia 
-        // edellisestä tehtävästä. Muista käyttää muuttujia a ja b!
-        int tulos = a * b;
-        System.out.println(a + " * " + b + " = " + tulos);
+        System.out.println("Anna tunnus: ");
+        String tunnus = lukija.nextLine();
+        System.out.println("Anna salasana: ");
+        String salasana = lukija.nextLine();
+        if (tunnus.equals("aleksi") && salasana.equals("tappara")){
+            System.out.println("Olet kirjautunut järjestelmään");
+        }else if (tunnus.equals("elina") && salasana.equals("kissa")){
+            System.out.println("Olet kirjautunut järjestelmään");
+        }else{
+            System.out.println("Virheellinen tunnus tai salasana!");
+        }
     }
-
 }
