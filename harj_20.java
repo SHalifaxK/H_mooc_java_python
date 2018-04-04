@@ -11,7 +11,6 @@ public static void tulostaTeksti() {
 }
 Ohjelman tulostus:
 Alussa olivat suo, kuokka ja Java.
-
 */
 public class TekstinTulostus {
 
