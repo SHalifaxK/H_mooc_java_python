@@ -13,7 +13,6 @@ Alussa olivat suo, kuokka ja Java.
 Alussa olivat suo, kuokka ja Java.
 Alussa olivat suo, kuokka ja Java.
 Alussa olivat suo, kuokka ja Java.
-
 */
 import java.util.Scanner;
 
