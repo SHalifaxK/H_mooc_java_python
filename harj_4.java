@@ -1,42 +1,44 @@
 
-public class MuuttuvatMuuttujat {
-
-    public static void main(String[] args) {
-        // MUUTA NÄITÄ:
 /*
-        Kanoja:
-3
-Pekonia (kg):
-5.5
+Tee metodi keskiarvo, joka laskee parametrina olevien lukujen keskiarvon. 
+Metodin sisällä tulee käyttää apuna edellä tehtyä metodia summa!
 
-Tässä vielä tiivistelmä:
-3
-5.5
+Tee metodi seuraavaan runkoon:
 
-Muuta ohjelmaa annetuista kohdista niin että tuloste on:
+public static int summa(int luku1, int luku2, int luku3, int luku4) {
+    // voit kopioida metodin summa toteutuksen tänne
+}
 
-Kanoja:
-9000
-Pekonia (kg):
-0.1
+public static double keskiarvo(int luku1, int luku2, int luku3, int luku4) {
+    // kirjoita koodia tähän
+    // laske alkioiden summa kutsumalla metodia summa
+}
 
-Tässä vielä tiivistelmä:
-9000
-0.1
+public static void main(String[] args) {
+    double vastaus = keskiarvo(4, 3, 6, 1);
+    System.out.println("Keskiarvo: " + vastaus);
+}
 
-        */
-        int kanojenLkm = 9000;
-        double pekoninPaino = 0.1;
+Ohjelman tulostus:
 
-        // ÄLÄ MUUTA NÄITÄ:
-        System.out.println("Kanoja:");
-        System.out.println(kanojenLkm);
-        System.out.println("Pekonia (kg):");
-        System.out.println(pekoninPaino);
-        System.out.println("");
-        System.out.println("Tässä vielä tiivistelmä:");
-        System.out.println(kanojenLkm);
-        System.out.println(pekoninPaino);
+Keskiarvo: 3.5
+*/
+public class LukujenKeskiarvo {
+
+    // toteuta tähän uudelleen aiemmassa tehtävässä tekemäsi metodi
+    public static int summa(int luku1, int luku2, int luku3, int luku4) {
+        int summa = luku1+luku2+luku3+luku4;
+        return summa;
     }
 
+    public static double keskiarvo(int luku1, int luku2, int luku3, int luku4) {
+        int sum = summa(luku1,luku2,luku3,luku4);
+        double karvo = 1.0*sum/4;
+        return karvo;
+    }
+
+    public static void main(String[] args) {
+        double vastaus = keskiarvo(4, 3, 6, 1);
+        System.out.println("Keskiarvo: " + vastaus);
+    }
 }
