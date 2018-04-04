@@ -1,90 +1,25 @@
+/*
+Tee ohjelma, joka tulostaa sanan alkuosan. Ohjelma kysyy käyttäjältä 
+sanan ja alkuosan pituuden. Käytä ohjelmassa metodia substring.
 
-import javafx.application.Application;
-import javafx.beans.value.ObservableValue;
-import javafx.geometry.Insets;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.GridPane;
-import javafx.stage.Stage;
+Anna sana: esimerkki
+Alkuosan pituus: 4
+Tulos: esim
 
-public class Jakolaskin extends Application {
+Anna sana: esimerkki
+Alkuosan pituus: 7
+Tulos: esimerk
+*/
+import java.util.Scanner;
 
-    @Override
-    public void start(Stage stage) {
-
-        // luodaan ulkoasu ja määritellään käyttöliittymän komponenttien asettelu
-        GridPane root = new GridPane();
-        root.setVgap(10);
-        root.setHgap(5);
-        root.setPadding(new Insets(10));
-
-        // luodaan tekstikenttien tekstit
-        Label luku1Teksti = new Label(" Luku 1:");
-        Label luku2Teksti = new Label(" Luku 2:");
-        
-        // luodaan kentät, joihin käyttäjä voi syöttää tekstiä
-        TextField luku1Kentta = new TextField("0");
-        luku1Kentta.setId("luku1");
-        TextField luku2Kentta = new TextField("0");
-        luku2Kentta.setId("luku2");
-        
-        asetaVainLukujaHyvaksyvaksi(luku1Kentta);
-        asetaVainLukujaHyvaksyvaksi(luku2Kentta);
-        
-        // luodaan kenttä, johon laskutulos lopulta asetetaan
-        Label osamaaraTeksti = new Label("");
-        osamaaraTeksti.setId("osamaara");
-
-        // luodaan nappi, jota painamalla laskutoimitus tehdään
-        Button btn = new Button();
-        btn.setId("nappi");
-        btn.setText(" / ");
-        btn.setOnAction((e) -> {
-            // haetaan tekstikenttien sisältämät arvot ja muunnetaan ne luvuiksi
-
-            int luku1 = Integer.parseInt(luku1Kentta.getText());
-            int luku2 = Integer.parseInt(luku2Kentta.getText());
-            
-            if(luku2 == 0) {
-                return;
-            }
-
-            // tehdään jakolasku
-            double osamaara = 1.0 * luku1 / luku2;
-
-            // asetetaan teksti laskutuloksen näyttävään kenttään
-            osamaaraTeksti.setText(luku1 + " / " + luku2 + " = " + osamaara);
-        });
-
-        // lisätään luodut elementit käyttöliittymään
-        root.add(luku1Teksti, 0, 0);
-        root.add(luku1Kentta, 2, 0);
-        root.add(luku2Teksti, 0, 1);
-        root.add(luku2Kentta, 2, 1);
-
-        root.add(btn, 0, 2);
-        root.add(osamaaraTeksti, 2, 2);
-
-        // näytetään ohjelma
-        Scene scene = new Scene(root);
-
-        stage.setTitle("");
-        stage.setScene(scene);
-        stage.show();
-    }
+public class Alkuosa {
 
     public static void main(String[] args) {
-        launch(args);
+        Scanner lukija = new Scanner(System.in);
+        System.out.println("Anna sana: ");
+        String sana = lukija.nextLine();
+        System.out.println("Alkuosan pituus: ");
+        int pituus = Integer.parseInt(lukija.nextLine());
+        System.out.println("Tulos: "+sana.substring(0,pituus));
     }
-
-    private void asetaVainLukujaHyvaksyvaksi(TextField kentta) {
-        kentta.textProperty().addListener((ObservableValue<? extends String> observable, String oldValue, String newValue) -> {
-            if (!newValue.matches("\\d*")) {
-                kentta.setText(new Integer(newValue.replaceAll("[^\\d]", "")).toString());
-            }
-        });
-    }
-
 }
