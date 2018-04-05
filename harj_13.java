@@ -1,25 +1,48 @@
+/*
+Tehtäväpohjassa tulee mukana ohjelma, joka kysyy käyttäjältä kahta merkkijonoa. 
+Tämän jälkeen ohjelma tulostaa indeksit, joista toinen merkkijono löytyy 
+ensimmäisessä merkkijonossa. Ohjelman esimerkkitulostus on seuraava:
 
+Mistä haetaan: ski-bi dibby dib yo da dub dub
+Mitä haetaan: dib
+Merkkijono dib löytyy kohdasta 7
+Merkkijono dib löytyy kohdasta 13
+
+Muokaa ohjelmaa siten, että ohjelma ei tulosta esiintymiskohtia, 
+mutta tulostaa esiintymiskertojen yhteislukumäärän. 
+Ohjelman tulee muokkauksen jälkeen toimia seuraavasti:
+
+Mistä haetaan: ski-bi dibby dib yo da dub dub
+Mitä haetaan: dib
+Merkkijonon dib esiintymiskertoja: 2
+*/
 import java.util.Scanner;
 
-public class KolmenLuvunSummaaja {
+public class MontakoKertaaMerkkijonossa {
 
     public static void main(String[] args) {
         Scanner lukija = new Scanner(System.in);
-/*
-Tee ohjelma, joka kysyy käyttäjältä kolme kokonaislukua ja tulostaa niiden summan.
-Anna ensimmäinen luku: 5
-Anna toinen luku: 2
-Anna kolmas luku: 12
-Lukujen summa: 19
-*/
-        // Toteuta ohjelmasi tähän. Muista kysyä kolmea lukua käyttäjältä!
-        System.out.println("Anna ensimmäinen luku: ");
-        int eka = Integer.parseInt(lukija.nextLine());
-        System.out.println("Anna toinen luku: ");
-        int toka = Integer.parseInt(lukija.nextLine());
-        System.out.println("Anna kolmas luku: ");
-        int kolmas = Integer.parseInt(lukija.nextLine());
-        int tulos = eka+toka+kolmas;
-        System.out.println("Lukujen summa: "+tulos);
+
+        System.out.print("Mistä haetaan: ");
+        String merkkijono = lukija.nextLine();
+        System.out.print("Mitä haetaan: ");
+        String haettava = lukija.nextLine();
+
+        int indeksi = 0;
+        int lukumaara = 0;
+        while (indeksi < merkkijono.length()) {
+            int kohta = merkkijono.indexOf(haettava, indeksi);
+
+            if (kohta == -1) {
+                break;
+            }else {
+                lukumaara++;
+            }
+
+
+            indeksi = kohta + 1;
+        }
+        System.out.println("Merkkijonon "+haettava+" esiintymiskertoja: " + lukumaara);
     }
 }
+
