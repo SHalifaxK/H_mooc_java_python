@@ -23,7 +23,6 @@ Ville
 Oskari
 
 Yhteensä: 11
-
 */
 import java.util.ArrayList;
 import java.util.Scanner;
