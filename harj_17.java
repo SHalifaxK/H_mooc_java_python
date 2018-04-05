@@ -26,7 +26,6 @@ Oskari
 
 Juno
 Oskari
-
 */
 import java.util.ArrayList;
 import java.util.Scanner;
