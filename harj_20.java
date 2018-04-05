@@ -38,6 +38,5 @@ public class ListanLukujenSumma {
             summa = summa + luku;
         }
         System.out.println("Summa: "+summa);
-        // toteuta listan lukujen summan laskeminen tänne
     }
 }
