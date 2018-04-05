@@ -19,7 +19,6 @@ Mari
 
 Ketä etsitään? Leevi
 Leevi ei löytynyt!
-
 */
 import java.util.ArrayList;
 import java.util.Scanner;
