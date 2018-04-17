@@ -1,6 +1,8 @@
 # H_mooc_java_python
 Ohjelmoinnin Mooc java vs python
 
-Neljännen osan tavoitteet
 
-Tuntee käsitteet olio, konstruktori ja olion metodit. Luo ainakin yhden oman luokan. Luo olioita tekemistään luokista. Ymmärtää static-määreellä ja ilman static-määrettä olevien metodien eron. Tietää olio-ohjelmoinnin perusperiaatteet ja luo luokkia, jotka kuvaavat annettua ongelma-aluetta.
+Viidennen osan tavoitteet
+
+Ymmärtää alkeis- ja viittaustyyppisten muuttujien erot. Osaa määritellä olioita, jotka sisältävät olioita. Osaa käyttää olioita metodin parametrina sekä luoda metodeja, jotka palauttavat olioita. Osaa käsitellä olioita listarakenteessa sekä käyttää listaa oliomuuttujana.
+
